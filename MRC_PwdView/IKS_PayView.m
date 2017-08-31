@@ -129,6 +129,7 @@ static float view_H = 300 ;
 }
 #pragma mark 隐藏
 - (void)hiddenPwd{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
     [self.tf_Pwd resignFirstResponder];
     __weak typeof(self) weak = self;
     [UIView animateWithDuration:0.32 animations:^{
