@@ -104,7 +104,7 @@ static float view_H = 300 ;
     }
     self.old_Length = length;
     
-    if (length == 6) {
+    if (length == PWD_MAX_LENGTH) {
         
         [self.tf_Pwd resignFirstResponder];
         
@@ -162,10 +162,10 @@ static float view_H = 300 ;
     
     float max_Height = 50;
     
-    float piece_Width = max_Width/6; // 每个格子间距
+    float piece_Width = max_Width/PWD_MAX_LENGTH; // 每个格子间距
     
     
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < PWD_MAX_LENGTH - 1; i++) {
         //创建中间间隔线
         
         UIView *view = [[UIView alloc]init];
@@ -177,7 +177,7 @@ static float view_H = 300 ;
     
     float piece_Size = 25;
     
-    for (int i = 0 ; i < 6; i++) {
+    for (int i = 0 ; i < PWD_MAX_LENGTH; i++) {
         //创建黑点
         UIView *blackView = [[UIView alloc]init];
         blackView.frame = CGRectMake( piece_Width * i + (piece_Width - piece_Size) / 2 , piece_Size / 2, piece_Size, piece_Size );
